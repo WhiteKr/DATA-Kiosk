@@ -11,6 +11,10 @@ class Menu {
 
     @Override
     public String toString() {
-        return "이름 : " + name + ", 가격 : " + price + "원";
+        return "이름 : " + name + ", " + getDesc();
+    }
+
+    public String getDesc() {
+        return "가격 : " + price + "원";
     }
 }

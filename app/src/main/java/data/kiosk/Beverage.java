@@ -14,7 +14,7 @@ class Beverage extends Menu {
     }
 
     @Override
-    public String toString() {
-        return (super.toString()) + ", 얼음 : " + ((this.ice) ? "있음" : "없음");
+    public String getDesc() {
+        return (super.getDesc()) + ", 얼음 : " + ((this.ice) ? "있음" : "없음");
     }
 }

@@ -14,7 +14,7 @@ public class Coffee extends Beverage {
     }
 
     @Override
-    public String toString() {
-        return super.toString() + ", 원두 : " + this.beans;
+    public String getDesc() {
+        return (super.getDesc()) + ", 원두 : " + this.beans;
     }
 }
