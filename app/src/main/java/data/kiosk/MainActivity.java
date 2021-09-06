@@ -2,8 +2,6 @@ package data.kiosk;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -26,14 +24,11 @@ public class MainActivity extends AppCompatActivity {
         arrayList.add("Go Language");
         arrayList.add("AVN SYSTEMS");
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayList);
         list.setAdapter(arrayAdapter);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String clickedItem = (String) list.getItemAtPosition(position);
-                Toast.makeText(MainActivity.this, clickedItem, Toast.LENGTH_LONG).show();
-            }
+        list.setOnItemClickListener((parent, view, position, id) -> {
+            String clickedItem = (String) list.getItemAtPosition(position);
+            Toast.makeText(MainActivity.this, clickedItem, Toast.LENGTH_LONG).show();
         });
     }
 }
